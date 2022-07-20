@@ -1,5 +1,6 @@
 <?php
 require_once 'Class/Verif.php';
+
 # on verifie que la methode d'envoie est bien POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 # on verifie que le bouton submit est bien cliqué
