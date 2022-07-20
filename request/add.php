@@ -4,6 +4,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 # on verifie que le bouton submit est bien cliqué
     if (isset($_POST["submit"])) {
 
+        # on declare la class verif
+        $verif = new Verif();
+
         # on verifie que les champs sont bien remplis
         if (!isset($_POST['amount'])) {
             echo "Please fill all.";
