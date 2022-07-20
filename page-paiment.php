@@ -11,11 +11,9 @@
     </thead>
     <tbody>
       <?php
-      require_once 'db.php';
-      require_once 'init.php';
 
-      $paye = new PlansUsers;
-      $info = new Info;
+      $paye = new ;
+      $info = new ;
 
       $infos = $info->getInfo();
       if ($stmt = $paye->getpayuser(['user' => $_SESSION['username']]));
@@ -29,7 +27,7 @@
 
         $curl = curl_init('https://dev.sellix.io/v1/orders/' . $Transaction);
         curl_setopt($curl, CURLOPT_USERAGENT, 'Sellix WooCommerce (PHP ' . PHP_VERSION . ')');
-        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Authorization: Bearer '.$infos['apikeys']]);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Authorization: Bearer (your api)']);
         curl_setopt($curl, CURLOPT_TIMEOUT, 10);
         curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -44,7 +42,7 @@
             'status' => 'VOIDED',
             'user' => $_SESSION["username"],
           ];
-          $plan = new PlansUsers;
+          $plan = new ;
           if ($plan->deletedeposit($new_status)) {
             $_SESSION["actived"] = "Status pay delete cancel";
             header('Location: ../deposit');
@@ -63,7 +61,7 @@
               'status' => $body["data"]["order"]["status"],
               'user' => $_SESSION["username"],
             ];
-            $plan = new PlansUsers;
+            $plan = new ;
             if ($plan->updatedepot($new_status)) {
               $_SESSION["actived"] = "Status change";
               header('Location: ../deposit');
@@ -75,7 +73,7 @@
             }
           }
         }
-        $usernn = new Users;
+        $usernn = new ;
         if ($Status == 'COMPLETED') {
           $array_users = [
             'username' => $_SESSION['username']
@@ -91,7 +89,7 @@
               'status' => 'VALIDE',
               'user' => $_SESSION["username"],
             ];
-            $plan = new PlansUsers;
+            $plan = new ;
             if ($plan->updatedepot($new_status)) {
               $_SESSION["actived"] = "Success Your Balance Added";
               header('Location: ../deposit');

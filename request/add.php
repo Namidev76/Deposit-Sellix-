@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["submit"])) {
 
         # on declare la class verif
-        $verif = new Verif();
+        $verif = new verif();
 
         # on verifie que les champs sont bien remplis
         if (!isset($_POST['amount'])) {
