@@ -1,4 +1,5 @@
 <?php
+# dev By sirNami & TibDeveloper
 require_once 'Class/Verif.php';
 
 # on verifie que la methode d'envoie est bien POST

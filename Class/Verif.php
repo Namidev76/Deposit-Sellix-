@@ -1,4 +1,5 @@
 <?php
+# dev By sirNami & TibDeveloper
 
 class verif
 {
