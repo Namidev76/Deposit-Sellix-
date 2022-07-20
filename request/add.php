@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             # on insert le paiement dans la base de donnee
             if ($plan->insertdepot($new_pay)) {
-                $_SESSION["actived"] = "Success";
+                echo "Success";
                 exit;
             } else {
             # on affiche un message d'erreur si on a pas reussi a les insert dans la base de donnee
